@@ -1,3 +1,20 @@
-<p>
-  {{ message }}
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <nav id="sidebar">
+        <button class="new-note btn btn-default">
+          New Note
+        </button>
+        <ul id="notes">
+          <li>Note 1</li>
+          <li>Note 2</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-xs-8">
+      <main>
+        <div ui-view></div>
+      </main>
+    </div>
+  </div>
+</div>
