@@ -1,0 +1,13 @@
+{
+  "name": "NotelySeed",
+  "description": "A starter project for an AngularJS 1.4 note-taking app.",
+  "version": "0.0.0",
+  "homepage": "git@github.com/getfretless/notely-seed.git",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-loader": "~1.4.0",
+    "angular-ui-router": "~0.2.15"
+  }
+}
