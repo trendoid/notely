@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "description": "An AngularJS 1.4 note-taking app.",
-  "repository": "git@github.com/getfretless/notely-seed.git",
+  "repository": "git@github.com/trendoid/notely.git",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.3.1",
