@@ -4,7 +4,7 @@
 	])
 	.config(notesConfig);
 
-	notesConfig['$inject'] = ['$stateProvider'];
+	notesConfig.$inject = ['$stateProvider'];
 	function notesConfig($stateProvider) {
 		$stateProvider
 
@@ -20,7 +20,7 @@
 			});
 	}
 	
-	NotesController['$inject'] = ['$scope', '$state'];
+	NotesController.$inject = ['$scope', '$state'];
 	function NotesController($scope, $state){
 		$state.go('notes.form');
 	}
