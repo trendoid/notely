@@ -12,7 +12,7 @@
 				.success(function (notesData) {
 					self.notes = notesData;
 					if(callback){
-						callback;
+						callback();
 					}
 				});
 		};
