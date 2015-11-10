@@ -15,8 +15,7 @@
 			})
 			.state('notes.form', {
 				url: '/:noteId',
-				templateUrl: '/notes/notes-form.html',
-				controller: NotesController
+				templateUrl: '/notes/notes-form.html'
 			});
 	}
 
@@ -25,9 +24,8 @@
 		$scope.note = {};
 
 		$scope.save = function () {		
-			//NotesService.save($scope.note);
-			console.log($scope.note.title);
-			console.log($scope.note.body_html);
+			NotesService.save($scope.note);
+
 		};
 
 		NotesService.fetch().then(function () {

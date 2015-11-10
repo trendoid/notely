@@ -12,6 +12,7 @@
   "author": "Aaron Stanley King",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "mongoose": "^4.2.5"
   },
