@@ -6,12 +6,14 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "dev": "node_modules/.bin/supervisor app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aaron Stanley King",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "mongoose": "^4.2.5"
   },
   "devDependencies": {
     "supervisor": "^0.9.1"
