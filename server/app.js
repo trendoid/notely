@@ -2,7 +2,18 @@ var express = require('express');
 var app = express();
 
 app.get('/notes', function(req, res){
-	res.send('I <3 Express!');
+	res.json(
+		[
+			{
+				title: 'hardcoded title',
+				body_html: 'this is the body'
+			},
+			{
+				title: 'title 2',
+				body_html: 'crap crap crap'
+			}
+		]
+	);
 });
 
 
