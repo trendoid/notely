@@ -9,11 +9,18 @@
 
 		self.fetch = function (callback) {
 			$http.get('http://localhost:3000/notes')
-				.success(function (notesData) {
-					self.notes = notesData;
+				.then(
+				// Success
+				function (response) {
+					self.notes = response.data;
 					if(callback){
-						callback();
+						callback(self.notes);
 					}
+				},
+				// Failure
+				function(response){
+					// TODO: handle failure
+					callback(response.statusText);
 				});
 		};
 		
