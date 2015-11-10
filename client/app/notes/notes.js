@@ -2,7 +2,7 @@
 	angular.module('notely.notes', [
 		'ui.router'
 	])
-	.config(notesConfig);
+		.config(notesConfig);
 
 	notesConfig.$inject = ['$stateProvider'];
 	function notesConfig($stateProvider) {
@@ -19,11 +19,11 @@
 				controller: NotesController
 			});
 	}
-	
+
 	NotesController.$inject = ['$state', '$scope', 'NotesService'];
-	function NotesController($state, $scope, NotesService){
-		NotesService.fetch(function(notesData){
-			$scope.notes = notesData;
+	function NotesController($state, $scope, NotesService) {
+		NotesService.fetch().then(function () {
+			$scope.notes = NotesService.get();
 		});
 		$state.go('notes.form');
 	}
