@@ -1,0 +1,16 @@
+{
+  "name": "notelyserver",
+  "version": "0.1.0",
+  "description": "Node backend for a note-taking app.",
+  "repository": "git@github.com/trendoid/notely.git",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron Stanley King",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
