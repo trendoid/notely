@@ -1,5 +1,5 @@
 var db = require('mongoose');
 
-db.connect('mongodb://mongo:mongo123@ds039880.mongolab.com:39880/notelydb')
+db.connect(process.env.DB_URI)
 
 module.exports = db;
