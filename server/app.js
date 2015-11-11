@@ -35,6 +35,20 @@ app.post('/notes', function (req, res) {
 	});
 });
 
+// Update a note
+// app.put('/notes', function (req, res) {
+// 	var note = new Note({
+// 		title: req.body.note.title,
+// 		body_html: req.body.note.body_html
+// 	});
+// 	note.save().then(function (noteData) {
+// 		res.json({
+// 			message: 'Successfully saved note.',
+// 			note: noteData
+// 		});
+// 	});
+// });
+
 app.listen(3000, function () {
 	console.log(process.env.DB_URI);
 	console.log('Listening on http://localhost:3000');
