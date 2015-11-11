@@ -51,7 +51,7 @@
 
 		$scope.delete = function () {
 			NotesService.delete($scope.note).then(function(response){
-				$state.go('notes')
+				$state.go('notes.form', { noteId: undefined })
 			});
 		}
 	}

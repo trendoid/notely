@@ -59,7 +59,7 @@ app.delete('/notes/:id', function (req, res) {
 			note.remove().then(function () {
 				res.json({
 					message: 'Successfully deleted note: ' + note.title,
-					id: note._id
+					note: note
 				});
 			});
 		});

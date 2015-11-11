@@ -82,7 +82,7 @@
 			noteDeletePromise.then(
 				// Success
 				function (response, callback) {
-					self.removeNote(response.data.id);
+					self.removeNote(response.data.note);
 					if (callback) {
 						callback(response);
 					}
@@ -104,11 +104,12 @@
 			}
 		};
 		
-		self.removeNote = function (id) {
+		self.removeNote = function (note) {
 			// find and replace
 			for (var i = 0; i < self.notes.length; i++) {
-				if (self.notes[i]._id === id) {
+				if (self.notes[i]._id === note._id) {
 					self.notes.splice(i, 1);
+					break;
 				}
 			}
 		};
