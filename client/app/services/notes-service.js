@@ -21,7 +21,17 @@
 		};
 
 		self.get = function () {
+			// look thru self.notes and find by id
 			return self.notes;
+		};
+		
+		self.findById = function (noteId) {
+			for(var i=0; i<self.notes.length; i++) {
+        		if (self.notes[i]._id === noteId) {
+					return self.notes[i];
+				}
+    		}
+			return {};
 		};
 		
 		self.save = function (note) {

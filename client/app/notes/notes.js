@@ -30,7 +30,11 @@
 
 		NotesService.fetch().then(function () {
 			$scope.notes = NotesService.get();
+			
+			//Test NotesService#findById
+			var note = NotesService.findById($scope.notes[0]._id);
+			console.log(note.title);
 		});
-		$state.go('notes.form');
+
 	}
 })();

@@ -9,7 +9,7 @@
 
   config.$inject = ['$urlRouterProvider'];
   function config($urlRouterProvider) {
-    $urlRouterProvider.otherwise('/notes');
+    $urlRouterProvider.otherwise('/notes/');
   }
 
   app.config(config);
