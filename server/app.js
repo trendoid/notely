@@ -16,7 +16,7 @@ app.use(function (req, res, next) {
 
 // List all notes
 app.get('/notes', function (req, res) {
-	Note.find().then(function (notes) {
+	Note.find().sort({ updated_at: -1 }).then(function (notes) {
 		res.json(notes);
 	});
 });
