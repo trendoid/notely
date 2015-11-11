@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-xs-4">
       <nav id="sidebar">
-        <button class="new-note btn btn-default">
+        <button class="new-note btn btn-default" ui-sref="notes.form({ noteId: undefined })">
           New Note
         </button>
         <ul id="notes">
           <li ng-repeat="note in notes">
-            <a class="note" ui-sref="notes.form({noteId: note._id})">{{ note.title }}</a>
+            <a class="note" ui-sref="notes.form({ noteId: note._id })">{{ note.title }}</a>
           </li>
         </ul>
       </nav>
