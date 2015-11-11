@@ -76,12 +76,39 @@
 				);
 			return noteUpdatePromise;
 		};
+		
+		self.delete = function (note) {
+			var noteDeletePromise = $http.delete('http://localhost:3000/notes/' + note._id);
+			noteDeletePromise.then(
+				// Success
+				function (response, callback) {
+					self.removeNote(response.data.id);
+					if (callback) {
+						callback(response);
+					}
+				},
+				// Failure
+				function (response) {
+					// TODO: handle failure
+				}
+				);
+			return noteDeletePromise;
+		};
 
 		self.replaceNote = function (note) {
 			// find and replace
 			for (var i = 0; i < self.notes.length; i++) {
 				if (self.notes[i]._id === note._id) {
 					self.notes[i] = note;
+				}
+			}
+		};
+		
+		self.removeNote = function (id) {
+			// find and replace
+			for (var i = 0; i < self.notes.length; i++) {
+				if (self.notes[i]._id === id) {
+					self.notes.splice(i, 1);
 				}
 			}
 		};

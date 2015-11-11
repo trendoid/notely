@@ -6,7 +6,7 @@
 		<textarea name="body_html" placeholder="Just start typing..." ng-model="note.body_html"></textarea>
 	</p>
 	<div class="form-actions">
-		<input type="submit" name="commit" value="Save" class="btn btn-default" />
+		<input type="submit" name="commit" value="Save" class="btn btn-default" /> <button type="button" ng-click="delete()" class="btn btn-danger">Delete</button>
 	</div>
 	<pre>
 		{{ note.body_text }}

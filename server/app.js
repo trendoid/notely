@@ -52,6 +52,19 @@ app.put('/notes/:id', function (req, res) {
 		});
 });
 
+// Update a note
+app.delete('/notes/:id', function (req, res) {
+	Note.findOne({ _id: req.params.id }).then(
+		function (note) {
+			note.remove().then(function () {
+				res.json({
+					message: 'Successfully deleted note: ' + note.title,
+					id: note._id
+				});
+			});
+		});
+});
+
 app.listen(3000, function () {
 	console.log(process.env.DB_URI);
 	console.log('Listening on http://localhost:3000');

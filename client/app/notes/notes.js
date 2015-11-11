@@ -38,9 +38,9 @@
 		$scope.save = function () {
 			// Decide whether to call creat or update
 			if ($scope.note._id) {
-				NotesService.update($scope.note).then( function(response){
+				NotesService.update($scope.note).then(function (response) {
 					$scope.note = angular.copy(response.data.note);
-				});				
+				});
 			}
 			else {
 				NotesService.create($scope.note).then(function (response) {
@@ -48,6 +48,12 @@
 				});
 			}
 		};
+
+		$scope.delete = function () {
+			NotesService.delete($scope.note).then(function(response){
+				$state.go('notes')
+			});
+		}
 	}
 
 })();
