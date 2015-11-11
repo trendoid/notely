@@ -4,7 +4,8 @@
 (function () {
   var app = angular.module('notely', [
     'ui.router',
-    'notely.notes'
+    'notely.notes',
+		'textAngular'
   ]);
 
   config.$inject = ['$urlRouterProvider'];

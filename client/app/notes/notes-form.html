@@ -3,15 +3,16 @@
 		<input type="text" name="title" id="note_title" placeholder="Title your note" ng-model="note.title" />
 	</p>
 	<p>
-		<textarea name="body_html" placeholder="Just start typing..." ng-model="note.body_html"></textarea>
+		<text-angular name="body_html" placeholder="Just start typing..." ta-toolbar="[
+			['bold', 'italics', 'underline'],
+			['ul', 'ol', 'indent', 'outdent'],
+			['html'],
+			['insertLink']]" ng-model="note.body_html"></text-angular>
 	</p>
 	<div class="form-actions">
-		<input type="submit" name="commit" value="Save" class="btn btn-default" /> 
+		<input type="submit" name="commit" value="Save" class="btn btn-default" />
 		<a ng-click="delete()" ng-show="note._id" class="btn">
 			<i class="fa fa-trash-o"></i>
 		</a>
 	</div>
-	<pre>
-		{{ note.body_text }}
-	</pre>
 </form>
