@@ -35,10 +35,13 @@
 		};
 
 		self.create = function (note) {
-			var notesPromise = $http.post('http://localhost:3000/notes', {
-				note: note
+			var noteCreatePromise = $http.post('http://localhost:3000/notes', {
+				note: {
+					title: note.title,
+					body_html: note.body_html
+				}
 			});
-			notesPromise.then(
+			noteCreatePromise.then(
 				// Success
 				function (response, callback) {
 					self.notes.unshift(response.data.note);
@@ -49,30 +52,40 @@
 				// Failure
 				function (response) {
 					// TODO: handle failure
-				});
-			return notesPromise;
+				}
+				);
+			return noteCreatePromise;
 		};
 
 		self.update = function (note) {
-			return $http.put('http://localhost:3000/notes', {
-				note: note
-			})
-				.then(
-					// Success
-					function (response) {
-						// find and replace with response
-						var replaceIndex = self.notes.length + 1;
-						for (var i = 0; i < self.notes.length; i++) {
-							if (self.notes[i]._id === response.data.note._id) {
-								replaceIndex = i;
-							}
-						}
-						self.notes.splice(replaceIndex, 1, response.data.note);
-					},
-					// Failure
-					function (response) {
-						// TODO: handle failure
-					});
+			var noteUpdatePromise = $http.put('http://localhost:3000/notes/' + note._id, {
+				note: {
+					title: note.title,
+					body_html: note.body_html
+				}
+			});
+			noteUpdatePromise.then(
+				// Success
+				function (response) {
+					self.replaceNote(response.data.note);
+				},
+				// Failure
+				function (response) {
+					// TODO: handle failure
+				}
+				);
+			return noteUpdatePromise;
+		};
+
+		self.replaceNote = function (note) {
+			// find and replace with response
+			// var replaceIndex = self.notes.length + 1;
+			// for (var i = 0; i < self.notes.length; i++) {
+			// 	if (self.notes[i]._id === note.note._id) {
+			// 		replaceIndex = i;
+			// 	}
+			// }
+			// self.notes.splice(replaceIndex, 1, note);
 		};
 	}
 
