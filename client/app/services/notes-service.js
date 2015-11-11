@@ -78,14 +78,12 @@
 		};
 
 		self.replaceNote = function (note) {
-			// find and replace with response
-			// var replaceIndex = self.notes.length + 1;
-			// for (var i = 0; i < self.notes.length; i++) {
-			// 	if (self.notes[i]._id === note.note._id) {
-			// 		replaceIndex = i;
-			// 	}
-			// }
-			// self.notes.splice(replaceIndex, 1, note);
+			// find and replace
+			for (var i = 0; i < self.notes.length; i++) {
+				if (self.notes[i]._id === note._id) {
+					self.notes[i] = note;
+				}
+			}
 		};
 	}
 

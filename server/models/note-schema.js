@@ -7,4 +7,9 @@ var NoteSchema = db.Schema({
 	updated_at: { type: Date, default: Date.now }
 });
 
+NoteSchema.pre('save', function(next){
+	this.updated_at = Date.now();
+	next();
+});
+
 module.exports = NoteSchema;
