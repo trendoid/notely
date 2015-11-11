@@ -7,7 +7,7 @@
         </button>
         <ul id="notes">
           <li ng-repeat="note in notes">
-            {{ note.title }}<br/>
+            <a href="/#/notes/{{ note._id }}">{{ note.title }}</a><br/>            
             {{ note.body_html }}
           </li>
         </ul>
