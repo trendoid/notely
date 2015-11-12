@@ -1,16 +1,18 @@
 angular.module('notely')
-	.service('UsersService', ['$http', 'API_BASE', ($http, API_BASE) => {
+	.service('UsersService', ['$http', 'API_BASE', 'AuthToken', 'CurrentUser', ($http, API_BASE, AuthToken, CurrentUser) => {
 		class UsersService {
 			create(user) {
 				let userPromise = $http.post(`${API_BASE}users`, {
 					user: user
 				});
 				userPromise.then((success) => {
-					console.log(success.data.user);
+					AuthToken.set(success.data.auth_token);
+					CurrentUser.set(success.data.user);
 				},
-				(failure) => {
-					console.log(failure.data);
-				})
+					(failure) => {
+						AuthToken.set(undefined);
+						CurrentUser.set(undefined);
+					})
 				return userPromise;
 			}
 		}
