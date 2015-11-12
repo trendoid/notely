@@ -16,4 +16,10 @@ NoteSchema.pre('save', function (next) {
 	next();
 });
 
+NoteSchema.methods.toJSON = function (){
+	var object = this.toObject();
+	delete object.__v;
+	return object;
+}
+
 module.exports = NoteSchema;
