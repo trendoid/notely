@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"module": "commonjs"
+	},
+	"files": [
+		"app.js",
+		"typings/node/node.d.ts",
+		"typings/express/express.d.ts"
+		
+	]
+}
