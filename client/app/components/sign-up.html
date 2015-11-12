@@ -5,15 +5,15 @@
       <form id="new_user" ng-submit="ctrl.submit()">
         <p>
           <label for="name">Full Name</label><br>
-          <input type="text" name="name" autofocus="autofocus" required>
+          <input type="text" name="name" ng-model="ctrl.user.name" autofocus="autofocus" required>
         </p>
         <p>
           <label for="username">Username</label><br>
-          <input type="text" name="username" required>
+          <input type="text" name="username" ng-model="ctrl.user.username" required>
         </p>
         <p>
           <label for="password">Password</label><br>
-          <input type="password" name="password" required>
+          <input type="password" name="password" ng-model="ctrl.user.password" required>
         </p>
         <input type="submit" name="commit" value="Sign Up" class="btn btn-default">
         <span class="login">
