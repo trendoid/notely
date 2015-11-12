@@ -9,3 +9,5 @@ Thumbs.db
 .idea
 .env
 npm-debug.log
+bundle.js
+bundle.js.map
