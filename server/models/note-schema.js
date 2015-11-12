@@ -1,3 +1,4 @@
+/* global ObjectIdType */
 var sanitizeHtml = require('sanitize-html');
 var htmlToText = require('html-to-text');
 var db = require('../config/db');
@@ -6,6 +7,7 @@ var NoteSchema = db.Schema({
 	title: { type: String}, //, required: true },
 	body_html: { type: String}, //, required: true },
 	body_text: String,
+	user: { type: db.Schema.Types.ObjectId, ref: 'User'},
 	updated_at: { type: Date, default: Date.now }
 });
 
