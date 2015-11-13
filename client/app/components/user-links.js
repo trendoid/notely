@@ -12,13 +12,12 @@ angular.module('notely')
       signedIn() {
         return !!(this.user()._id);
       }
-      logout()
-      {
-         this.CurrentUser.clear();
-         this.AuthToken.clear();
+      logout() {
+        this.CurrentUser.clear();
+        this.AuthToken.clear();
       }
     }
-    UserLinksController.$inject = ['AuthToken','CurrentUser'];
+    UserLinksController.$inject = ['AuthToken', 'CurrentUser'];
 
     return {
       scope: {},
