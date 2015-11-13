@@ -6,14 +6,11 @@ angular.module('notely')
 					user: user
 				});
 				userPromise.then((success) => {
-					AuthToken.clear();
-					CurrentUser.clear();
 					AuthToken.set(success.data.auth_token);
 					CurrentUser.set(success.data.user);
 				},
 					(failure) => {
-						AuthToken.set(undefined);
-						CurrentUser.set(undefined);
+
 					})
 				return userPromise;
 			}
