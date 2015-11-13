@@ -13,7 +13,7 @@ router.post('/', function (req, res) {
 
 	user.save().then(function (userData) {
 		res.json({
-			message: 'THanks for signing up!',
+			message: 'Thanks for signing up!',
 			user: userData,
 			auth_token: jwt.sign(userData._id, process.env.JWT_SECRET, {
 				expiresIn: 60*60*24

@@ -1,3 +1,4 @@
+var bcrypt = require('bcryptjs');
 var db = require('../config/db');
 
 var UserSchema = db.Schema({
@@ -12,10 +13,17 @@ UserSchema.pre('save', function (next) {
 	next();
 });
 
-UserSchema.methods.toJSON = function (){
+UserSchema.methods.toJSON = function () {
 	var object = this.toObject();
 	delete object.password_digest;
 	delete object.__v;
 	return object;
 }
+
+UserSchema.methods.authenticate = function(password, callback) {
+  bcrypt.compare(password, this.password_digest, function(err, isMatch) {
+    callback(isMatch);
+  })
+};
+
 module.exports = UserSchema;

@@ -14,20 +14,20 @@ angular.module('notely')
 					})
 				return userPromise;
 			}
-			
+
 			signIn(user) {
-				console.log(user);
-				let userPromise = $http.post(`${API_BASE}users`, {
+				let sessionPromise = $http.post(`${API_BASE}sessions`, {
 					user: user
 				});
-				userPromise.then((success) => {
-					AuthToken.set(success.data.auth_token);
-					CurrentUser.set(success.data.user);
-				},
+				sessionPromise.then(
+					(success) => {
+						AuthToken.set(success.data.auth_token);
+						CurrentUser.set(success.data.user);
+					},
 					(failure) => {
 
 					})
-				return userPromise;
+				return sessionPromise;
 			}
 		}
 		return new UsersService();
