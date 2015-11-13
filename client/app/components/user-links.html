@@ -1,5 +1,5 @@
 <div class="user-links">
 	<div ng-show="ctrl.signedIn()">
-		Signed in as {{ ctrl.user.name }} | <a href="#">logout</a>
+		Signed in as {{ ctrl.user.name }} | <a ng-click="crtl.logout()">logout</a>
 	</div>
 </div>
