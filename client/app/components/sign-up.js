@@ -7,9 +7,10 @@ angular.module('notely')
       submit() {
         UsersService.create(this.user).then(function (response) {
           $state.go('notes.form', { nodeId: undefined });
-        }
-
-          );
+        });
+      }
+      signIn() {
+        $state.go('sign-in');
       }
     }
 
