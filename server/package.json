@@ -18,7 +18,7 @@
     "express": "^4.13.3",
     "html-to-text": "^1.4.0",
     "jsonwebtoken": "^5.4.1",
-    "mongoose": "^4.2.5",
+    "mongoose": "^5.9.18",
     "sanitize-html": "^1.11.1"
   },
   "devDependencies": {
